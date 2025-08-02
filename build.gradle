@@ -1,0 +1,37 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '2.0.20'
+}
+
+group = 'douglas'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    js {
+        browser {
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                }
+            }
+        }
+        binaries.executable()
+    }
+
+    sourceSets {
+        jsMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+            }
+        }
+        jsTest {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-test-js"
+            }
+        }
+    }
+}

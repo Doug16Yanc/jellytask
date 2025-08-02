@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To do list</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="navbar">
+    <button class="mobile-menu-toggle">☰</button>
+    <div class="right-side">
+        <div class="icon">
+            <img src="images/icon.png" alt="Ícone">
+        </div>
+        <div class="title">
+            <h2>JellyTask</h2>
+        </div>
+    </div>
+    <div class="date">
+        <h2 id="weekday"></h2>
+        <p id="today"></p>
+    </div>
+</div>
+
+<div class="sidebar-overlay"></div>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-content">
+        <div id="user-profile">
+            </div>
+            <hr />
+            <nav>
+                <ul>
+                    <li>Principal</li>
+                    <li>Time</li>
+                    <li>Dashboard</li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <main class="main-content">
+        <div class="header-content">
+            <h1 id="welcome-message">Bem-vindo de volta, Doug 👋</h1>
+            <div class="team-container" id="team"></div>
+        </div>
+        <section class="tasks" id="tasks-container">
+            <div class="task-column" id="todo-column">
+                <h3>Para fazer</h3>
+            </div>
+            <div class="task-column" id="in-progress-column">
+                <h3>Em andamento</h3>
+            </div>
+            <div class="task-column" id="done-column">
+                <h3>Concluído</h3>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="to-do-list.js"></script>
+</body>
+</html>

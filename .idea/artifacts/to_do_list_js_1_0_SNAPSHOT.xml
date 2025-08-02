@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="to-do-list-js-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="to-do-list-js-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="to-do-list.jsMain" />
+    </root>
+  </artifact>
+</component>
