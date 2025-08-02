@@ -7,6 +7,7 @@ import kotlin.js.Date
 import kotlinx.browser.window
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
+
 fun main() {
     document.addEventListener("DOMContentLoaded", { _ ->
         setupResponsiveSidebar()
@@ -46,34 +47,6 @@ fun setupCurrentDate() {
     document.getElementById("weekday")?.textContent = weekday
     document.getElementById("today")?.textContent = dateFormatted
 }
-
-/*
-fun setupMobileMenu() {
-    val sidebar = document.querySelector(".sidebar") as? HTMLElement ?: return
-    val overlay = document.querySelector(".sidebar-overlay") as? HTMLElement ?: return
-    val toggle = document.querySelector(".mobile-menu-toggle") as? HTMLElement ?: return
-
-    sidebar.classList.add("mobile-ready")
-
-    // Fecha tudo ao carregar (garantia)
-    sidebar.classList.remove("active")
-    overlay.classList.remove("active")
-
-    toggle.addEventListener("click", { _ ->
-        sidebar.classList.toggle("active")
-        overlay.classList.toggle("active")
-
-        // Bloqueia scroll do body quando menu aberto
-        document.body?.style?.overflowWrap = if (sidebar.classList.contains("active")) "hidden" else "auto"
-    })
-
-    overlay.addEventListener("click", { _ ->
-        sidebar.classList.remove("active")
-        overlay.classList.remove("active")
-        document.body?.style?.overflowWrap = "auto"
-    })
-} */
-
 
 fun setupMobileMenu() {
     val sidebar = document.querySelector(".sidebar") as? HTMLElement ?: return
