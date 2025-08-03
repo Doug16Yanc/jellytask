@@ -14,11 +14,19 @@ fun main() {
         setupCurrentDate()
         setupMobileMenu()
 
-        UserViewModel().loadUserProfile(1)
-        UserViewModel().loadUsers()
-        TaskViewModel().renderTasks()
+        val userVM = UserViewModel()
+        userVM.loadUserProfile(1)
+        userVM.initPages()
+
+        val taskVM = TaskViewModel()
+        taskVM.renderTasks()
+
+        window.setTimeout({
+            taskVM.setupSortableColumns()
+        }, 100)
     })
 }
+
 
 fun setupResponsiveSidebar() {
     val sidebar = document.querySelector(".sidebar") as? HTMLElement ?: return

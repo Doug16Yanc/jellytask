@@ -1,0 +1,111 @@
+.team-swiper-container {
+    display: none;
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px); /* Largura fixa de 350px para cada coluna */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Centraliza o grid */
+    width: 100%;
+    max-width: 1200px; /* 350px * 3 + 20px * 2 gaps */
+    margin: 0 auto;
+}
+
+/* Cards - DESKTOP */
+.team-card {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-purple));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--box-shadow);
+    width: 350px; /* Largura fixa */
+    height: 430px;
+    transition: transform 0.3s ease;
+}
+
+.card-avatar img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body h3 {
+    margin: 10px 0;
+    color: var(--text-white);
+    font-size: 16px;
+}
+
+.card-body .role {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-accent);
+}
+
+.swiper-pagination-bullet {
+    background: var(--text-muted);
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-accent);
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        display: none;
+    }
+
+    .team-swiper-container {
+        display: block;
+    }
+
+    .swiper-slide {
+        width: 85%;
+        max-width: 400px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .team-card {
+        height: 400px;
+    }
+
+    .card-avatar img {
+        height: 250px;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Time - JellyTask</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/team.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <button class="mobile-menu-toggle">☰</button>
+    <div class="right-side">
+        <div class="icon">
+            <img src="../images/icon.png" alt="Ícone">
+        </div>
+        <div class="title">
+            <h2>JellyTask</h2>
+        </div>
+    </div>
+    <div class="date">
+        <h2 id="weekday"></h2>
+        <p id="today"></p>
+    </div>
+</div>
+
+<div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <div id="user-profile">
+        </div>
+        <hr />
+        <nav>
+            <ul>
+                <li onclick="location.href='/index.html'">Principal</li>
+                <li onclick="location.href='/pages/team.html'">Time</li>
+                <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
+            </ul>
+        </nav>
+    </div>
+    </aside>
+    <main class="main-content">
+        <div class="team-section">
+            <h2 id="text-team">O coral dos pólipos</h2>
+
+            <div class="team-grid" id="team-desktop"></div>
+
+            <div class="team-swiper-container">
+                <div class="swiper teamSwiper">
+                    <div class="swiper-wrapper" id="team-mobile"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/to-do-list.js"></script>
+<script>
+    let teamSwiper = null;
+
+    function initTeamSwiper() {
+        if (teamSwiper) {
+            teamSwiper.destroy(true, true);
+            teamSwiper = null;
+        }
+
+        if (window.innerWidth <= 768) {
+            teamSwiper = new Swiper('.teamSwiper', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                loop: false,
+                grabCursor: true,
+                breakpoints: {
+                    769: {
+                        enabled: false
+                    }
+                }
+            });
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        initTeamSwiper();
+        setTimeout(initTeamSwiper, 300);
+    });
+    window.addEventListener('resize', function () {
+        initTeamSwiper();
+    });
+</script>
+</body>
+</html>

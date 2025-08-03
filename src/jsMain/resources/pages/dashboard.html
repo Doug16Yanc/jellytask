@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To do list</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/legends.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+</head>
+<body>
+<div class="navbar">
+    <button class="mobile-menu-toggle">☰</button>
+    <div class="right-side">
+        <div class="icon">
+            <img src="../images/icon.png" alt="Ícone">
+        </div>
+        <div class="title">
+            <h2>JellyTask</h2>
+        </div>
+    </div>
+    <div class="date">
+        <h2 id="weekday"></h2>
+        <p id="today"></p>
+    </div>
+</div>
+
+<div class="sidebar-overlay"></div>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div id="user-profile">
+            </div>
+            <hr />
+            <nav>
+                <ul>
+                    <li onclick="location.href='/index.html'">Principal</li>
+                    <li onclick="location.href='/pages/team.html'">Time</li>
+                    <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <main class="main-content">
+        <div class="header-col team-col">
+            <h2 id="text-team">Time</h2>
+            <div class="team-container" id="team"></div>
+        </div>
+    </main>
+</div>
+<script src="/to-do-list.js"></script>
+</body>
+</html>

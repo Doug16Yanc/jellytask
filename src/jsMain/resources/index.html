@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>To do list</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/calendar.css"/>
+    <link rel="stylesheet" href="css/legends.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -33,27 +38,60 @@
             <hr />
             <nav>
                 <ul>
-                    <li>Principal</li>
-                    <li>Time</li>
-                    <li>Dashboard</li>
+                    <li onclick="location.href='/index.html'">Principal</li>
+                    <li onclick="location.href='/pages/team.html'">Time</li>
+                    <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
                 </ul>
             </nav>
         </div>
     </aside>
     <main class="main-content">
         <div class="header-content">
-            <h1 id="welcome-message">Bem-vindo de volta, Doug 👋</h1>
-            <div class="team-container" id="team"></div>
+            <div class="one-side-content">
+                <div class="header-col welcome-col">
+                    <h1 id="welcome-message">Bem-vindo de volta, Doug 👋</h1>
+                    <h3 id="text-legend">Prioridade da tarefa por cor</h3>
+                        <div class="priority-legend">
+                            <div class="legend-item">
+                                <span class="legend-color critical"></span>
+                                <span>Crítica</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color high"></span>
+                                <span>Alta</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color medium"></span>
+                                <span>Média</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color low"></span>
+                                <span>Baixa</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="header-col team-col">
+                <h2 id="text-team">Time</h2>
+                <div class="team-container" id="team"></div>
+            </div>
         </div>
         <section class="tasks" id="tasks-container">
             <div class="task-column" id="todo-column">
-                <h3>Para fazer</h3>
+                <div class="column-header">
+                    <h3>Em fila</h3>
+                    <button class="add-task-btn" data-column="to-do">+</button>
+                </div>
             </div>
             <div class="task-column" id="in-progress-column">
-                <h3>Em andamento</h3>
+                <div class="column-header">
+                    <h3>Em andamento</h3>
+                </div>
             </div>
             <div class="task-column" id="done-column">
-                <h3>Concluído</h3>
+                <div class="column-header">
+                    <h3>Concluído</h3>
+                </div>
             </div>
         </section>
     </main>

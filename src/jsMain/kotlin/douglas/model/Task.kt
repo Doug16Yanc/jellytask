@@ -10,7 +10,7 @@ data class Task(
     val name: String,
     val description: String,
     val priority: Priority,
-    val status: Status,
+    var status: Status,
     val initialDate: String,
     val finalDate: String
 )

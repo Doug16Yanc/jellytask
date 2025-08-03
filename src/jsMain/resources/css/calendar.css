@@ -1,0 +1,58 @@
+.flatpickr-calendar {
+    background: var(--primary-dark) !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 4px 14px var(--box-shadow) !important;
+    color: var(--text-light) !important;
+}
+
+.flatpickr-months .flatpickr-month,
+.flatpickr-weekdays {
+    background: var(--primary-purple) !important;
+    color: var(--text-white) !important;
+    fill: var(--text-white) !important;
+}
+
+span.flatpickr-weekday {
+    color: var(--text-light) !important;
+}
+
+.flatpickr-day {
+    color: var(--text-light) !important;
+}
+
+.flatpickr-day:hover {
+    background: var(--bg-transparent-medium) !important;
+    border-color: var(--border-light) !important;
+}
+
+.flatpickr-day.selected {
+    background: var(--primary-accent) !important;
+    border-color: var(--primary-accent) !important;
+    color: var(--text-white) !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary-accent) !important;
+}
+
+.flatpickr-input {
+    background: var(--primary-dark) !important;
+    color: var(--text-white) !important;
+    border: 1px solid var(--border-light) !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: var(--text-white) !important;
+}
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+    fill: var(--text-white) !important;
+}
+
+.flatpickr-current-month select {
+    background: var(--primary-dark) !important;
+    color: var(--text-white) !important;
+}

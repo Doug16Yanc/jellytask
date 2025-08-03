@@ -5,7 +5,7 @@ import douglas.model.enums.Priority
 import douglas.model.enums.Status
 
 class TaskRepository {
-    val tasks = listOf(
+    private val _tasks = mutableListOf(
         Task(
             id = 1,
             name = "Criar pipeline com Terraform, AWS e Jenkins",
@@ -62,19 +62,36 @@ class TaskRepository {
         ),
     )
 
-    fun getTaskById(id: Int): Task? {
-        return tasks.firstOrNull { it.id == id }
+    val tasks: List<Task> get() = _tasks.toList()
+
+    private fun generateId(): Int = (_tasks.maxOfOrNull { it.id } ?: 0) + 1
+
+    fun addTask(
+        title: String,
+        description: String,
+        priority: Priority,
+        startDate: String,
+        endDate: String,
+        status: Status
+    ): Task {
+        val newTask = Task(
+            id = generateId(),
+            name = title,
+            description = description,
+            priority = priority,
+            initialDate = startDate,
+            finalDate = endDate,
+            status = status
+        )
+        _tasks.add(newTask)
+        return newTask
     }
 
-    fun getAllTasks(): List<Task> {
-        return tasks
-    }
-
-    fun getHighPriorityTasks(): List<Task> {
-        return tasks.filter { it.priority == Priority.ALTA || it.priority == Priority.CRÍTICA }
+    fun updateTaskStatus(taskId: Int, newStatus: Status) {
+        _tasks.find { it.id == taskId }?.status = newStatus
     }
 
     fun getTasksByStatus(status: Status): List<Task> {
-        return tasks.filter { it.status == status }
+        return _tasks.filter { it.status == status }
     }
 }
