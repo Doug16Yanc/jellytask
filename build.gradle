@@ -27,6 +27,7 @@ kotlin {
                 implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation(npm("sortablejs", "1.15.0"))
+                implementation(npm("chart.js", "4.4.1"))
             }
         }
         jsTest {

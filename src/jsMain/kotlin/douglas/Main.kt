@@ -1,5 +1,6 @@
 package douglas
 
+import douglas.viewmodel.DashboardViewModel
 import douglas.viewmodel.TaskViewModel
 import douglas.viewmodel.UserViewModel
 import kotlinx.browser.document
@@ -20,6 +21,9 @@ fun main() {
 
         val taskVM = TaskViewModel()
         taskVM.renderTasks()
+
+        val dashboardVM = DashboardViewModel()
+        dashboardVM.renderDashboard()
 
         window.setTimeout({
             taskVM.setupSortableColumns()

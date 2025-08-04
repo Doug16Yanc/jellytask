@@ -1,0 +1,19 @@
+.dashboard-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#dashboard canvas {
+    width: 450px !important;
+    height: 450px !important;
+}

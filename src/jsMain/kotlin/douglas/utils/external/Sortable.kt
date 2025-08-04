@@ -1,6 +1,6 @@
 @file:JsModule("sortablejs")
 @file:JsNonModule
 
-package douglas.utils
+package douglas.utils.external
 
 external class Sortable(element: dynamic, options: dynamic = definedExternally)

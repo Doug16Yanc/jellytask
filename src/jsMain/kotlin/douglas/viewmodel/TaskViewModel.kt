@@ -4,7 +4,7 @@ import douglas.model.Task
 import douglas.model.enums.Priority
 import douglas.model.enums.Status
 import douglas.service.TaskService
-import douglas.utils.Sortable
+import douglas.utils.external.Sortable
 import douglas.utils.SortableOptions
 import douglas.utils.formatDate
 import douglas.utils.showAlertDialog
@@ -12,7 +12,6 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import org.w3c.dom.*
 import org.w3c.dom.events.Event
-import kotlin.js.Date
 
 class TaskViewModel {
     private val taskService = TaskService()
@@ -32,6 +31,8 @@ class TaskViewModel {
         renderTaskColumn(Status.EM_ANDAMENTO, "in-progress-column")
         renderTaskColumn(Status.CONCLUÍDA, "done-column")
         setupEventListeners()
+
+        setupSortableColumns()
     }
 
     private fun setupSortableColumn(columnId: String) {

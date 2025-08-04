@@ -1,14 +1,15 @@
 package douglas.repository
 
 import douglas.model.User
+import douglas.model.enums.Identity
 
 class UserRepository {
     val _users = mutableListOf(
-        User(1, "Douglas", listOf("Dev Fullstack"), "https://media.licdn.com/dms/image/v2/D4D03AQHd8C2IYLV0kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721865916750?e=1756944000&v=beta&t=i2U2JV3HuoLv31z31l3ovlZzIz7FVhPLocB9sWtV38U"),
-        User(2, "Kaiane", listOf("Dev Frontend"), "https://media.licdn.com/dms/image/v2/D4D35AQEKgQE9VVupIg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1727046758291?e=1754686800&v=beta&t=LYBRqKJ2fIhpLvpkNHMi0nSr81Mx7WZ4u22nlnJKXWI"),
-        User(3, "Lívia", listOf("UI/UX Designer"), "https://media.licdn.com/dms/image/v2/D4D35AQGS9M8Jc73Ztg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699752296436?e=1754686800&v=beta&t=X-YyGgUhRwyPrLreOJoYUvjN8_Otz9xBhmqRYRbkXuc"),
-        User(4, "Micaele", listOf("Confeiteira"), ""),
-        User(5, "Wesley", listOf("Dev Fullstack"), "https://media.licdn.com/dms/image/v2/D4D03AQH1M-Zd6fJYBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708198673788?e=1756944000&v=beta&t=MvtzxH9woF0p_gp7iCryqyjU0s-lun-G_ku4VKG-SmU"),
+        User(1, "Douglas", Identity.PÓLIPO, listOf("Dev Fullstack"), "https://media.licdn.com/dms/image/v2/D4D03AQHd8C2IYLV0kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721865916750?e=1756944000&v=beta&t=i2U2JV3HuoLv31z31l3ovlZzIz7FVhPLocB9sWtV38U"),
+        User(2, "Kaiane", Identity.MEDUSA, listOf("Dev Frontend"), "https://media.licdn.com/dms/image/v2/D4D35AQEKgQE9VVupIg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1727046758291?e=1754686800&v=beta&t=LYBRqKJ2fIhpLvpkNHMi0nSr81Mx7WZ4u22nlnJKXWI"),
+        User(3, "Lívia", Identity.MEDUSA, listOf("UI/UX Designer"), "https://media.licdn.com/dms/image/v2/D4D35AQGS9M8Jc73Ztg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1699752296436?e=1754686800&v=beta&t=X-YyGgUhRwyPrLreOJoYUvjN8_Otz9xBhmqRYRbkXuc"),
+        User(4, "Micaele", Identity.MEDUSA, listOf("Confeiteira"), "https://cdn.oantagonista.com/uploads/2024/02/Imagem-do-WhatsApp-de-2024-02-05-as-20.13.51_e1d50a4c.jpg"),
+        User(5, "Wesley",  Identity.PÓLIPO, listOf("Dev Fullstack"), "https://media.licdn.com/dms/image/v2/D4D03AQH1M-Zd6fJYBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708198673788?e=1756944000&v=beta&t=MvtzxH9woF0p_gp7iCryqyjU0s-lun-G_ku4VKG-SmU"),
     )
 
     val users: List<User> get() = _users.toList()
