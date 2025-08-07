@@ -98,11 +98,11 @@ A interface utiliza HTML e CSS para estrutura e estilo, enquanto a lógica e man
    cd jellytask
    ```
 
-````
+
 2. Execute:
-   ```bash
+```bash
  ./gradlew jsBrowserDevelopmentRun --continuous
-````
+```
 
 3. Abra `http://localhost:8080` em seu navegador.
 
