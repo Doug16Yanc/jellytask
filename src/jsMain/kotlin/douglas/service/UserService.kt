@@ -1,6 +1,7 @@
 package douglas.service
 
 import douglas.model.User
+import douglas.model.enums.Identity
 import douglas.repository.UserRepository
 
 class UserService {
@@ -13,5 +14,9 @@ class UserService {
 
     fun getAllUsers() : List<User> {
         return userRepository.users.toList()
+    }
+
+    fun login(email: String, password: String) : User? {
+        return userRepository.getUserEmailAndPassword(email, password)
     }
 }

@@ -6,12 +6,14 @@
     <title>To do list</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<div class="navbar">
+<nav class="navbar">
     <button class="mobile-menu-toggle">☰</button>
-    <div class="right-side">
+    <div onclick="location.href='/pages/home.html'" class="right-side">
         <div class="icon">
             <img src="../images/icon.png" alt="Ícone">
         </div>
@@ -19,11 +21,14 @@
             <h2>JellyTask</h2>
         </div>
     </div>
-    <div class="date">
-        <h2 id="weekday"></h2>
-        <p id="today"></p>
+    <div class="right-container">
+        <div class="date">
+            <h2 id="weekday"></h2>
+            <p id="today"></p>
+        </div>
+        <button class="logout-btn">Sair</button>
     </div>
-</div>
+</nav>
 
 <div class="sidebar-overlay"></div>
 
@@ -35,10 +40,11 @@
             <hr />
             <nav>
                 <ul>
-                    <li onclick="location.href='/index.html'">Principal</li>
+                    <li onclick="location.href='/pages/home.html'">Principal</li>
                     <li onclick="location.href='/pages/team.html'">Time</li>
                     <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
                 </ul>
+                <button class="logout-btn">Sair</button>
             </nav>
         </div>
     </aside>

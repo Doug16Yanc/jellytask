@@ -7,7 +7,7 @@
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 350px); /* Largura fixa de 350px para cada coluna */
+    grid-template-columns: repeat(4, 300px); /* Largura fixa de 350px para cada coluna */
     gap: 20px;
     padding: 20px;
     justify-content: center; /* Centraliza o grid */
@@ -22,8 +22,8 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 8px var(--box-shadow);
-    width: 350px; /* Largura fixa */
-    height: 430px;
+    width: 280px; /* Largura fixa */
+    height: 450px;
     transition: transform 0.3s ease;
 }
 
