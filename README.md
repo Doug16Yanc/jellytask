@@ -1,6 +1,6 @@
-# To-Do List Kotlin/JS
+# To-Do List Kotlin/JS - Jellytask
 
-Este repositório contém a versão Kotlin/JS de um aplicativo de lista de tarefas (To-Do List), desenvolvido como parte do Desafio Prático da Unidade III - Linguagens relacionadas ao JavaScript.
+Este repositório contém a versão Kotlin/JS de um aplicativo de lista de tarefas (Jellytask), desenvolvido como parte do Desafio Prático da Unidade III - Linguagens relacionadas ao JavaScript.
 
 ## Visão Geral
 
@@ -123,3 +123,4 @@ Kotlin/JS foi escolhido para explorar a capacidade de escrever aplicações web 
 | Integração com HTML/CSS | Uso de `kotlinx.browser.document` torna manipulação direta e tipada | Mapear corretamente seletores e eventos do DOM |
 
 ## Screenshots
+<img width="1920" height="966" alt="Image" src="https://github.com/user-attachments/assets/703d1d25-5148-43f4-861f-50254f3843d4" />
