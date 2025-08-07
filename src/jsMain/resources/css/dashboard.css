@@ -17,3 +17,18 @@
     width: 450px !important;
     height: 450px !important;
 }
+
+#text-dashboard {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    #text-dashboard {
+        font-size: 1rem;
+    }
+
+    #dashboard canvas {
+        width: 350px !important;
+        height: 350px !important;
+    }
+}

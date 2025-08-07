@@ -1,0 +1,109 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-dark);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    font-size: 24px;
+    background: var(--primary-purple);
+    color: var(--text-white);
+    border: 1px solid var(--border-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    margin: 0 0.4rem;
+}
+
+.icon, img {
+    width: 5dvh;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--jelly-blue), var(--jelly-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout-btn {
+    margin: auto 0;
+    background: var(--primary-purple);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.logout-btn:hover {
+    background: var(--jelly-purple);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+        justify-content: space-between;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .icon, img {
+        width: 4dvh;
+    }
+
+    .right-container {
+        gap: 0.5rem;
+    }
+
+    .right-container .logout-btn {
+        display: none;
+    }
+
+    .date {
+        display: none;
+    }
+}

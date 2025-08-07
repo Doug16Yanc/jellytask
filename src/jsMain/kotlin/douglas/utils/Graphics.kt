@@ -31,7 +31,7 @@ fun renderIdentityChart(polyps: Int, jellyfishs: Int) {
                     "text" to "Gráfico de Identidade dos Membros",
                     "color" to "#fff",
                     "font" to json(
-                        "size" to 20,
+                        "size" to 18,
                         "weight" to "bold",
                         "family" to "Arial"
                     ),
@@ -47,7 +47,6 @@ fun renderIdentityChart(polyps: Int, jellyfishs: Int) {
                         "color" to "#fff",
                         "font" to json(
                             "size" to 16,
-                            "weight" to "bold",
                             "family" to "Arial"
                         )
                     )
@@ -56,12 +55,10 @@ fun renderIdentityChart(polyps: Int, jellyfishs: Int) {
                     "bodyFont" to json(
                         "family" to "Arial",
                         "size" to 14,
-                        "weight" to "bold"
                     ),
                     "titleFont" to json(
                         "family" to "Arial",
                         "size" to 16,
-                        "weight" to "bold"
                     )
                 )
             )
@@ -92,7 +89,7 @@ fun renderPriorityChart(low: Int, medium: Int, high: Int, critical: Int) {
                     "text" to "Gráfico de prioridade das tarefas",
                     "color" to "#fff",
                     "font" to json(
-                        "size" to 20,
+                        "size" to 18,
                         "weight" to "bold",
                         "family" to "Arial"
                     ),
@@ -107,8 +104,7 @@ fun renderPriorityChart(low: Int, medium: Int, high: Int, critical: Int) {
                         "padding" to 16,
                         "color" to "#fff",
                         "font" to json(
-                            "size" to 20,
-                            "weight" to "bold",
+                            "size" to 17,
                             "family" to "Arial"
                         )
                     ),
@@ -117,12 +113,10 @@ fun renderPriorityChart(low: Int, medium: Int, high: Int, critical: Int) {
                     "bodyFont" to json(
                         "family" to "Arial",
                         "size" to 14,
-                        "weight" to "bold"
                     ),
                     "titleFont" to json(
                         "family" to "Arial",
                         "size" to 16,
-                        "weight" to "bold"
                     )
                 )
             )
@@ -153,7 +147,7 @@ fun renderStatusChart(pending: Int, current: Int, finished: Int) {
                     "text" to "Gráfico de status das tarefas",
                     "color" to "#fff",
                     "font" to json(
-                        "size" to 20,
+                        "size" to 18,
                         "weight" to "bold",
                         "family" to "Arial"
                     ),
@@ -168,8 +162,7 @@ fun renderStatusChart(pending: Int, current: Int, finished: Int) {
                         "padding" to 16,
                         "color" to "#fff",
                         "font" to json(
-                            "size" to 20,
-                            "weight" to "bold",
+                            "size" to 17,
                             "family" to "Arial"
                         )
                     ),
@@ -177,13 +170,11 @@ fun renderStatusChart(pending: Int, current: Int, finished: Int) {
                 "tooltip" to json(
                     "bodyFont" to json(
                         "family" to "Arial",
-                        "size" to 14,
-                        "weight" to "bold"
+                        "size" to 12,
                     ),
                     "titleFont" to json(
                         "family" to "Arial",
                         "size" to 16,
-                        "weight" to "bold"
                     )
                 )
             )

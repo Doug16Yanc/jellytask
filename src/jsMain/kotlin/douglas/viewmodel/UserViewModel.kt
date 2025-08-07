@@ -1,18 +1,18 @@
 package douglas.viewmodel
 
-import douglas.model.Task
-import douglas.model.enums.Status
-import douglas.repository.UserRepository
 import douglas.service.UserService
+import douglas.utils.JSONUtils
 import kotlinx.browser.document
+import kotlinx.browser.localStorage
 import kotlinx.browser.window
-import kotlinx.datetime.internal.JSJoda.use
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLImageElement
 
 class UserViewModel {
     private val userService = UserService()
+    private val currentUserKey = "current_user"
+
 
     fun initPages() {
         when {
@@ -21,12 +21,27 @@ class UserViewModel {
         }
     }
 
-    fun loadUserProfile(userId: Int) {
-        val user = userService.getUserProfile(userId)
+    fun loadUserProfile() {
+        val storedUser = localStorage.getItem(currentUserKey) ?: run {
+            window.location.href = "/index.html"
+            return
+        }
+
+        val user = JSONUtils.parseUser(storedUser)
         val userProfileContainer = document.getElementById("user-profile") as? HTMLDivElement ?: return
 
-        user?.let {
-            val img = document.createElement("img") as HTMLImageElement
+        val msg = document.getElementById("welcome-message") as HTMLElement
+        val img = document.createElement("img") as HTMLImageElement
+        val icon = document.createElement("img") as HTMLImageElement
+
+        user.let {
+            icon.src = "https://emojigraph.org/media/twitter/jellyfish_1fabc.png"
+            icon.alt = "Jellyfish"
+            icon.style.width = "1.5em"
+            icon.style.verticalAlign = "middle"
+            msg.textContent = "Bem vindo, ${it.name}!"
+            msg.appendChild(icon)
+
             img.src = it.imageUrl.ifEmpty { "https://via.placeholder.com/150" }
             img.alt = it.name
             img.className = "profile-image"
@@ -99,28 +114,30 @@ class UserViewModel {
     }
 
     private fun initSwiperAfterRender() {
-        js("""
-    setTimeout(function() {
-        if (typeof initSwiper === 'function') {
-            initSwiper();
-        } else if (window.Swiper && document.querySelector('.teamSwiper')) {
-            new Swiper('.teamSwiper', {
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                spaceBetween: 20,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    769: {
-                        enabled: false
-                    }
-                }
-            });
-        }
-    }, 100);
-    """)
+//        js(
+//            """
+////    setTimeout(function() {
+////        if (typeof initSwiper === 'function') {
+////            initSwiper();
+////        } else if (window.Swiper && document.querySelector('.teamSwiper')) {
+////            new Swiper('.teamSwiper', {
+////                slidesPerView: 'auto',
+////                centeredSlides: true,
+////                spaceBetween: 20,
+////                pagination: {
+////                    el: '.swiper-pagination',
+////                    clickable: true,
+////                },
+////                breakpoints: {
+////                    769: {
+////                        enabled: false
+////                    }
+////                }
+////            });
+////        }
+////    }, 100);
+//    """
+//        )
     }
 }
 

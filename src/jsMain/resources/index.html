@@ -3,102 +3,56 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>To do list</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="css/calendar.css"/>
-    <link rel="stylesheet" href="css/legends.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <title>Login - JellyTask</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<div class="navbar">
-    <button class="mobile-menu-toggle">☰</button>
-    <div class="right-side">
-        <div class="icon">
-            <img src="images/icon.png" alt="Ícone">
-        </div>
-        <div class="title">
-            <h2>JellyTask</h2>
-        </div>
-    </div>
-    <div class="date">
-        <h2 id="weekday"></h2>
-        <p id="today"></p>
-    </div>
-</div>
 
-<div class="sidebar-overlay"></div>
+<!-- Navbar -->
 
-<div class="container">
-    <aside class="sidebar">
-        <div class="sidebar-content">
-        <div id="user-profile">
+<!-- Login Container -->
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="jelly-icon">
+                <div class="logo-container">
+                    <img src="/images/icon.png" alt="Ícone">
+                    <h1 class="title">JellyTask</h1>
+                </div>
             </div>
-            <hr />
-            <nav>
-                <ul>
-                    <li onclick="location.href='/index.html'">Principal</li>
-                    <li onclick="location.href='/pages/team.html'">Time</li>
-                    <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
-                </ul>
-            </nav>
+            <h1>Bem-vindo de volta</h1>
+            <p>Faça login para acessar sua conta</p>
         </div>
-    </aside>
-    <main class="main-content">
-        <div class="header-content">
-            <div class="one-side-content">
-                <div class="header-col welcome-col">
-                    <h1 id="welcome-message">
-                        Bem-vindo de volta, Doug
-                        <img src="https://emojigraph.org/media/twitter/jellyfish_1fabc.png" alt="Imagem" style="width: 1.5em; vertical-align: middle;" />
-                    </h1>
-                    <h3 id="text-legend">Prioridade da tarefa por cor</h3>
-                        <div class="priority-legend">
-                            <div class="legend-item">
-                                <span class="legend-color critical"></span>
-                                <span>Crítica</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color high"></span>
-                                <span>Alta</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color medium"></span>
-                                <span>Média</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="legend-color low"></span>
-                                <span>Baixa</span>
-                            </div>
-                        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
                 </div>
             </div>
-            <div class="header-col team-col">
-                <h2 id="text-team">Time</h2>
-                <div class="team-container" id="team"></div>
-            </div>
-        </div>
-        <section class="tasks" id="tasks-container">
-            <div class="task-column" id="todo-column">
-                <div class="column-header">
-                    <h3>Em fila</h3>
-                    <button class="add-task-btn" data-column="to-do">+</button>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                    <button type="button" class="password-toggle" id="togglePassword">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
             </div>
-            <div class="task-column" id="in-progress-column">
-                <div class="column-header">
-                    <h3>Em andamento</h3>
-                </div>
-            </div>
-            <div class="task-column" id="done-column">
-                <div class="column-header">
-                    <h3>Concluído</h3>
-                </div>
-            </div>
-        </section>
-    </main>
+
+            <button type="submit" class="btn-login">Entrar</button>
+
+            <p class="signup-link">
+                Não tem uma conta? <a href="/pages/register.html">Cadastre-se agora</a>
+            </p>
+        </form>
+    </div>
 </div>
 <script src="to-do-list.js"></script>
 </body>

@@ -1,29 +1,50 @@
 package douglas
 
 import douglas.viewmodel.DashboardViewModel
+import douglas.viewmodel.LoginViewModel
 import douglas.viewmodel.TaskViewModel
 import douglas.viewmodel.UserViewModel
 import kotlinx.browser.document
-import kotlin.js.Date
+import kotlinx.browser.localStorage
 import kotlinx.browser.window
 import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
+import org.w3c.dom.asList
+import kotlin.js.Date
 
 fun main() {
     document.addEventListener("DOMContentLoaded", { _ ->
-        setupResponsiveSidebar()
+        when {
+            window.location.pathname.contains("/") ||
+                    window.location.pathname == "/pages/home.html" -> {
+                LoginViewModel().setupLoginPage()
+            }
+        }
+
         setupCurrentDate()
         setupMobileMenu()
+        setupLogoutBtn()
 
-        val userVM = UserViewModel()
-        userVM.loadUserProfile(1)
-        userVM.initPages()
+        when {
+            window.location.pathname.contains("/pages/home.html") -> {
+                UserViewModel().initPages()
+                UserViewModel().loadUserProfile()
 
-        val taskVM = TaskViewModel()
-        taskVM.renderTasks()
+                TaskViewModel().renderTasks()
+            }
+        }
+        when {
+            window.location.pathname.contains("/pages/team.html") -> {
+                UserViewModel().initPages()
+
+            }
+        }
+
 
         val dashboardVM = DashboardViewModel()
         dashboardVM.renderDashboard()
+
+        val taskVM = TaskViewModel()
+
 
         window.setTimeout({
             taskVM.setupSortableColumns()
@@ -31,17 +52,15 @@ fun main() {
     })
 }
 
-
-fun setupResponsiveSidebar() {
-    val sidebar = document.querySelector(".sidebar") as? HTMLElement ?: return
-
-    if (window.innerWidth < 768) {
-        sidebar.style.display = "none"
+fun setupLogoutBtn() {
+    val nodeList = document.querySelectorAll(".logout-btn")
+    val btnsList: List<HTMLElement> = nodeList.asList().map { it as HTMLElement }
+    btnsList.forEach { btn ->
+        btn.addEventListener("click", {
+            localStorage.removeItem("current_user")
+            window.location.href = "/index.html"
+        })
     }
-
-    window.addEventListener("resize", {
-        sidebar.style.display = if (window.innerWidth < 768) "none" else "block"
-    })
 }
 
 fun setupCurrentDate() {

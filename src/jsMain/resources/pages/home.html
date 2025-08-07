@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To do list</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/calendar.css"/>
+    <link rel="stylesheet" href="../css/legends.css"/>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <button class="mobile-menu-toggle">☰</button>
+    <div onclick="location.href='/pages/home.html'" class="right-side">
+        <div class="icon">
+            <img src="../images/icon.png" alt="Ícone">
+        </div>
+        <div class="title">
+            <h2>JellyTask</h2>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="date">
+            <h2 id="weekday"></h2>
+            <p id="today"></p>
+        </div>
+        <button class="logout-btn">Sair</button>
+    </div>
+</nav>
+
+<div class="sidebar-overlay"></div>
+
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-content">
+        <div id="user-profile">
+            </div>
+            <hr />
+            <nav>
+                <ul>
+                    <li onclick="location.href='/pages/home.html'">Principal</li>
+                    <li onclick="location.href='/pages/team.html'">Time</li>
+                    <li onclick="location.href='/pages/dashboard.html'">Dashboard</li>
+                </ul>
+                <button class="logout-btn">Sair</button>
+
+            </nav>
+        </div>
+    </aside>
+    <main class="main-content">
+        <div class="header-content">
+            <div class="one-side-content">
+                <div class="header-col welcome-col">
+                    <h1 id="welcome-message"></h1>
+                    <h3 id="text-legend">Prioridade da tarefa por cor</h3>
+                        <div class="priority-legend">
+                            <div class="legend-item">
+                                <span class="legend-color critical"></span>
+                                <span>Crítica</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color high"></span>
+                                <span>Alta</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color medium"></span>
+                                <span>Média</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color low"></span>
+                                <span>Baixa</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="header-col team-col">
+                <h2 id="text-team">Time</h2>
+                <div class="team-container" id="team"></div>
+            </div>
+        </div>
+        <section class="tasks" id="tasks-container">
+            <div class="task-column" id="todo-column">
+                <div class="column-header">
+                    <h3>Em fila</h3>
+                    <button class="add-task-btn" data-column="to-do">+</button>
+                </div>
+            </div>
+            <div class="task-column" id="in-progress-column">
+                <div class="column-header">
+                    <h3>Em andamento</h3>
+                </div>
+            </div>
+            <div class="task-column" id="done-column">
+                <div class="column-header">
+                    <h3>Concluído</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="/to-do-list.js"></script>
+</body>
+</html>
